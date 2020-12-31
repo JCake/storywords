@@ -1,5 +1,6 @@
 <div style="padding-bottom: 0.5em;">
-  <button (click)="begin()">{{words.length ? 'Restart' : 'Begin'}}</button>
+  <button (click)="begin()" *ngIf="!words.length">Begin</button>
+  <button (click)="restart()" *ngIf="words.length > 0">Restart</button>
   <button (click)="addWord()" *ngIf="words.length > 0" style="margin-left: 1em;">Add Word</button>
 </div>
 <div *ngFor="let word of words" style="padding-bottom: 0.2em">

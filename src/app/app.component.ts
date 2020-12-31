@@ -40,5 +40,10 @@ begin(){
   }
 }
 
+restart(){
+  this.words = [];
+  this.begin();
+}
+
 
 }
