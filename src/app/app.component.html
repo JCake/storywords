@@ -1,10 +1,16 @@
 <div style="padding-bottom: 0.5em;">
+  <select [(ngModel)]="category" style="margin-right: 1em;">
+    <option *ngFor="let catOption of categories">{{catOption}}</option>
+  </select>
   <button (click)="begin()" *ngIf="!words.length">Begin</button>
   <button (click)="restart()" *ngIf="words.length > 0">Restart</button>
   <button (click)="addWord()" *ngIf="words.length > 0" style="margin-left: 1em;">Add Word</button>
 </div>
 <div *ngFor="let word of words" style="padding-bottom: 0.2em">
   <input type="checkbox" [(ngModel)]="word.used"/><span>{{word.word}}</span>
+</div>
+<div style="padding-top: 1em">
+  <i>Words from https://myvocabulary.com/</i>
 </div>
 
 
